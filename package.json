@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
-    "build": "npm run clean && mkdir dist && babel src -s -d dist",
     "start": "nodemon src/index.js --exec babel-node",
-    "clean": "rm -rf dist/"
+    "build": "npm run clean && mkdir dist && babel src -s -d dist",
+    "clean": "rm -rf dist/",
+    "prod": "npm run build && node bin/production"
   },
   "repository": {
     "type": "git",
