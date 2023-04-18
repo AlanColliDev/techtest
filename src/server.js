@@ -9,7 +9,7 @@ const server = express();
 server.use(cors());
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
-server.set('PORT', config);
+server.set('PORT', process.env.PORT || 3000);
 
 server.use(alumnosRouter);
 
