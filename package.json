@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
-    "start": "node src/index.js  --exec babel-node"
+    "build": "mkdir dist && babel src -s -d dist",
+    "start": "npm run build && node bin/production"
     
   },
   "repository": {
