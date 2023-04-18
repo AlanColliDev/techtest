@@ -5,9 +5,9 @@ const router = Router();
 router.get('/alumno', getAll);
 router.post('/alumno', createNew);
 router.put('/alumno', updateAlumno);
-router.get('/test', (req, resp) => {
+router.get('/', (req, resp) => {
 	resp.status(200).json({
-		message: "hello from NODEJS"
+		message: "hello from NODEJS - Alan Colli "
 	})
 });
 

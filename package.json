@@ -1,7 +1,7 @@
 {
   "name": "techtest",
   "version": "1.0.0",
-  "description": "",
+  "description": "Prueba tecnica",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
@@ -33,11 +33,11 @@
     "tedious": "^16.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.21.4",
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
     "@babel/node": "^7.20.7",
-    "@babel/preset-env": "^7.21.4",
-    "nodemon": "^2.0.22",
+    "@babel/preset-env": "^7.20.2",
+    "nodemon": "^2.0.20",
     "sequelize-cli": "^6.6.0"
   }
 }
