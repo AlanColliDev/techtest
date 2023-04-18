@@ -1,5 +1,5 @@
 import {response, Router} from 'express';
-import { getAll, createNew, updateAlumno } from '../controllers/alumnos.controller';
+import { getAll, createNew, updateAlumno } from '../controllers/alumnos.controller.js';
 const router = Router();
 
 router.get('/alumno', getAll);

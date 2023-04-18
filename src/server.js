@@ -1,6 +1,6 @@
 import express from 'express';
-import alumnosRouter from './routes/alumnos.routes'
-import config from './config'
+import alumnosRouter from './routes/alumnos.routes.js'
+import config from './config.js'
 import cors from 'cors';
 
 const bodyParser = require('body-parser');

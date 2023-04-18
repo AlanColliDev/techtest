@@ -1,5 +1,5 @@
 import { json } from 'body-parser';
-import model from '../../models/';
+import model from '../../models/index.js';
 
 export const getAll = async (req, res) => {
 	try {
