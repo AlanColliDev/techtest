@@ -30,9 +30,10 @@ export const createNew = async (req, res) => {
 			apellido_materno: req.body.apellidoMaterno,
 			genero: req.body.genero,
 		}).then((result) => {
+			console.log('response local', result)
 			res.status(201).json({
 				message: 'alumn was created successfully',
-				alumno: req.body.matricula
+				data: result.dataValues
 			});
 		});
 
