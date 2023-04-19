@@ -54,7 +54,7 @@ export const updateAlumno = async (req, res) => {
 			.then(async (result) => {
 				if ((!result.length > 0))
 					res.status(404).json({
-						message: "update failed, record doesn't exist"
+						message: "No existe el registro a actualizar."
 					})
 				else {
 					await model.alumno.update(
@@ -67,10 +67,14 @@ export const updateAlumno = async (req, res) => {
 						{ where: { id: req.body.id } }
 					);
 
-					res.status(200).json({
-						message: 'Información actualizada con éxito',
-						data: `ID: ${req.body.id} actualizado.`
-					});
+					await model.alumno.findAll({ where: {id: req.body.id} })
+						.then(async(response) => {
+							res.status(200).json({
+								message: 'Información actualizada con éxito',
+								data: response[0].dataValues
+							});
+						});
+					
 				}
 
 			});
