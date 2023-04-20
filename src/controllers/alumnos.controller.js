@@ -50,7 +50,7 @@ export const updateAlumno = async (req, res) => {
 
 	try {
 
-		await model.alumno.findAll({ where: { id: req.body.id } })
+		await model.alumno.findAll({ where: { matricula: req.body.matricula } })
 			.then(async (result) => {
 				if ((!result.length > 0))
 					res.status(404).json({
@@ -64,10 +64,10 @@ export const updateAlumno = async (req, res) => {
 							apellido_paterno: req.body.apellidoPaterno,
 							genero: req.body.genero
 						},
-						{ where: { id: req.body.id } }
+						{ where: { matricula: req.body.matricula } }
 					);
 
-					await model.alumno.findAll({ where: {id: req.body.id} })
+					await model.alumno.findAll({ where: {matricula: req.body.matricula} })
 						.then(async(response) => {
 							res.status(200).json({
 								message: 'Información actualizada con éxito',
