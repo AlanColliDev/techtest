@@ -67,16 +67,14 @@ export const updateAlumno = async (req, res) => {
 						{ where: { matricula: req.body.matricula } }
 					);
 
-					await model.alumno.findAll({ where: {matricula: req.body.matricula} })
-						.then(async(response) => {
+					await model.alumno.findAll({ where: { matricula: req.body.matricula } })
+						.then(async (response) => {
 							res.status(200).json({
 								message: 'Información actualizada con éxito',
 								data: response[0].dataValues
 							});
 						});
-					
 				}
-
 			});
 
 	} catch (error) {
@@ -85,5 +83,25 @@ export const updateAlumno = async (req, res) => {
 			error: error
 		})
 	}
-
 };
+
+export const deleteAlumno = async (req, res) => {
+	await model.alumno.findAll({ where: { matricula: req.body.matricula } })
+		.then(async (result) => {
+			if ((!result.length > 0))
+				res.status(404).json({
+					message: "Sin datos."
+				})
+			else {
+				await model.alumno.destroy(
+					{ where: { matricula: req.body.matricula } }
+				);
+				const data = await model.alumno.findAll();
+				res.status(200).json({
+					message: 'Registro eliminado con éxito',
+					data
+				});
+			}
+		});
+
+}
